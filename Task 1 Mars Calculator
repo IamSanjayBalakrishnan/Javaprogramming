@@ -1,0 +1,34 @@
+public class SanjayMarsWeightCalculator {
+
+    // variables declared at the top
+    static float earthWeightBalakrishnan = 84.0f;
+    static float marsGravityFactorBalakrishnan = 0.38f;
+    static float marsWeightBalakrishnan;
+
+    public static void main(String[] args) {
+
+        // calculate Mars weight (float)
+        marsWeightBalakrishnan = earthWeightBalakrishnan * marsGravityFactorBalakrishnan;
+        System.out.println("Mars weight (float): " + marsWeightBalakrishnan);
+
+
+        double marsWeightDoubleBalakrishnan = marsWeightBalakrishnan;
+        System.out.printf("Mars weight as double (4 decimals): %.4f\n", marsWeightDoubleBalakrishnan);
+
+
+        int marsWeightIntBalakrishnan = (int) marsWeightDoubleBalakrishnan;
+        System.out.println("Mars weight converted to int: " + marsWeightIntBalakrishnan);
+
+
+        char marsWeightCharBalakrishnan = (char) marsWeightIntBalakrishnan;
+        System.out.println("Int converted to char: " + marsWeightCharBalakrishnan);
+
+        int charMathBalakrishnan = marsWeightCharBalakrishnan + 10;
+        System.out.println("Char + 10 converted to int: " + charMathBalakrishnan);
+
+// The Numbers are my weight in Kilograms
+        //Student ID: 73084
+
+
+    }
+}
