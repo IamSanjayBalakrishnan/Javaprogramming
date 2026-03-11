@@ -1,0 +1,23 @@
+public class LegoBricks {
+
+    public static void main(String[] args) {
+
+        int amountOfBricks = 68; // odd between 50–100
+        int containerCapacity = 6; // even between 5–10
+
+        int fullContainers = amountOfBricks / containerCapacity;
+        int remainingBricks = amountOfBricks % containerCapacity;
+
+        int totalContainers = fullContainers;
+
+        if (remainingBricks > 0) {
+            totalContainers++;
+        }
+
+        System.out.println("Total bricks: " + amountOfBricks);
+        System.out.println("Container capacity: " + containerCapacity);
+        System.out.println("Full containers: " + fullContainers);
+        System.out.println("Remaining bricks: " + remainingBricks);
+        System.out.println("Total containers needed: " + totalContainers);
+    }
+}
