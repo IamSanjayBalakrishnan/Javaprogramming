@@ -1,0 +1,114 @@
+public class SanjayMarsWeightCalculator {
+
+    // variables declared at the top
+    static float earthWeightBalakrishnan = 84.0f;
+    static float marsGravityFactorBalakrishnan = 0.38f;
+    static float marsWeightBalakrishnan;
+
+    public static void main(String[] args) {
+
+        // calculate Mars weight (float)
+        marsWeightBalakrishnan = earthWeightBalakrishnan * marsGravityFactorBalakrishnan;
+        System.out.println("Mars weight (float): " + marsWeightBalakrishnan);
+
+
+        double marsWeightDoubleBalakrishnan = marsWeightBalakrishnan;
+        System.out.printf("Mars weight as double (4 decimals): %.4f\n", marsWeightDoubleBalakrishnan);
+
+
+        int marsWeightIntBalakrishnan = (int) marsWeightDoubleBalakrishnan;
+        System.out.println("Mars weight converted to int: " + marsWeightIntBalakrishnan);
+
+
+        char marsWeightCharBalakrishnan = (char) marsWeightIntBalakrishnan;
+        System.out.println("Int converted to char: " + marsWeightCharBalakrishnan);
+
+        int charMathBalakrishnan = marsWeightCharBalakrishnan + 10;
+        System.out.println("Char + 10 converted to int: " + charMathBalakrishnan);
+
+// The Numbers are my weight in Kilograms
+        //Student ID: 73084
+
+
+    }
+}
+
+
+
+
+Task 2
+
+
+import java.util.Random;
+
+public class EvenorOddSanjay {
+
+    public static void main(String[] args) {
+
+        Random rand = new Random();
+
+        int numberBalakrishnan = rand.nextInt(100) + 1;
+
+        System.out.println("Generated random number: " + numberBalakrishnan);
+
+        if (numberBalakrishnan % 2 == 0) {
+            System.out.println("The number is EVEN.");
+        } else {
+            System.out.println("The number is ODD.");
+        }
+    }
+}
+
+
+Task 3
+
+
+public class LegoBricks {
+
+    public static void main(String[] args) {
+
+        int amountOfBricks = 68; // odd between 50–100
+        int containerCapacity = 6; // even between 5–10
+
+        int fullContainers = amountOfBricks / containerCapacity;
+        int remainingBricks = amountOfBricks % containerCapacity;
+
+        int totalContainers = fullContainers;
+
+        if (remainingBricks > 0) {
+            totalContainers++;
+        }
+
+        System.out.println("Total bricks: " + amountOfBricks);
+        System.out.println("Container capacity: " + containerCapacity);
+        System.out.println("Full containers: " + fullContainers);
+        System.out.println("Remaining bricks: " + remainingBricks);
+        System.out.println("Total containers needed: " + totalContainers);
+    }
+}
+
+task 4
+
+public class Tax {
+
+    public static void main(String[] args) {
+// Different Cost from the Question (2.35).m
+        double netPrice = 2.35;
+        double vat = 0.23;
+
+        double grossPrice = netPrice * (1 + vat);
+
+        double totalGross = grossPrice * 10000;
+
+        double calculatedNet = totalGross / (1 + vat);
+
+        System.out.println("Net price: " + netPrice);
+        System.out.println("Gross price: " + grossPrice);
+        System.out.println("Total gross (10000 pcs): " + totalGross);
+        System.out.println("Net after removing VAT: " + calculatedNet);
+
+
+
+
+    }
+}
