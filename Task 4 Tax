@@ -1,0 +1,23 @@
+public class Tax {
+
+    public static void main(String[] args) {
+// Different Cost from the Question (2.35).m
+        double netPrice = 2.35;
+        double vat = 0.23;
+
+        double grossPrice = netPrice * (1 + vat);
+
+        double totalGross = grossPrice * 10000;
+
+        double calculatedNet = totalGross / (1 + vat);
+
+        System.out.println("Net price: " + netPrice);
+        System.out.println("Gross price: " + grossPrice);
+        System.out.println("Total gross (10000 pcs): " + totalGross);
+        System.out.println("Net after removing VAT: " + calculatedNet);
+
+
+
+
+    }
+}
