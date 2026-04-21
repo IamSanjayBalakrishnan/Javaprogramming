@@ -1,0 +1,86 @@
+import java.util.Scanner;
+
+public class NumberSystemConverter {
+    private static Scanner scanner = new Scanner(System.in);
+
+    public static void main(String[] args) {
+        char choice;
+        do {
+            printMenu();
+            choice = scanner.next().toUpperCase().charAt(0);
+
+            switch (choice) {
+                case 'A': convertToDecimal(); break;
+                case 'B': convertFromDecimal(); break;
+                case 'C': performOperation('+'); break;
+                case 'D': performOperation('-'); break;
+                case 'E': performOperation('*'); break;
+                case 'F': performOperation('/'); break; 
+                case 'W': System.out.println("Exiting program..."); break;
+                default: System.out.println("Invalid option!");
+            }
+        } while (choice != 'W');
+    }
+
+    private static void printMenu() {
+        System.out.println("\n--- Vistula Number System Converter ---");
+        System.out.println("A: Any System -> Decimal");
+        System.out.println("B: Decimal -> Any System");
+        System.out.println("C: Addition (+)");
+        System.out.println("D: Subtraction (-)");
+        System.out.println("E: Multiplication (*)");
+        System.out.println("F: Division (/)");
+        System.out.println("W: Exit");
+        System.out.print("Select an option: ");
+    }
+
+    
+    private static void convertToDecimal() {
+        System.out.print("Enter the number: ");
+        String numStr = scanner.next();
+        System.out.print("Enter the base of this number (2-16): ");
+        int base = scanner.nextInt();
+        
+        int decimal = Integer.parseInt(numStr, base);
+        System.out.println("Result in Decimal: " + decimal);
+    }
+
+    
+    private static void convertFromDecimal() {
+        System.out.print("Enter decimal number: ");
+        int decimal = scanner.nextInt();
+        System.out.print("Enter target base (2-16): ");
+        int base = scanner.nextInt();
+
+        String result = Integer.toString(decimal, base).toUpperCase();
+        System.out.println("Result in Base " + base + ": " + result);
+    }
+
+   
+    private static void performOperation(char op) {
+        System.out.print("Enter Base of 1st number: ");
+        int base1 = scanner.nextInt();
+        System.out.print("Enter 1st number: ");
+        String n1 = scanner.next();
+
+        System.out.print("Enter Base of 2nd number: ");
+        int base2 = scanner.nextInt();
+        System.out.print("Enter 2nd number: ");
+        String n2 = scanner.next();
+
+        int dec1 = Integer.parseInt(n1, base1);
+        int dec2 = Integer.parseInt(n2, base2);
+        int result = 0;
+
+        switch (op) {
+            case '+': result = dec1 + dec2; break;
+            case '-': result = dec1 - dec2; break;
+            case '*': result = dec1 * dec2; break;
+            case '/': result = (dec2 != 0) ? dec1 / dec2 : 0; break;
+        }
+
+        System.out.print("In which base should the result be displayed? ");
+        int targetBase = scanner.nextInt();
+        System.out.println("Final Result: " + Integer.toString(result, targetBase).toUpperCase());
+    }
+}
